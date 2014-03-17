@@ -55,8 +55,6 @@
 				urlBase: '{block:IfDevelopmentModeEnabled}{text:Development Base URL}{/block:IfDevelopmentModeEnabled}'
 			};
 
-			window.thetheme = thetheme;
-
 		</script>
 
 		<script{block:IfDevelopmentModeEnabled} data-main="{text:Development Base URL}/core/js/theme.js"{/block:IfDevelopmentModeEnabled} src="{block:IfDevelopmentModeEnabled}{text:Development Base URL}/core/lib/requirejs/require.js{/block:IfDevelopmentModeEnabled}{block:IfNotDevelopmentModeEnabled}{text:Produciton JavaScript URL}{/block:IfNotDevelopmentModeEnabled}" type="text/javascript"s></script>
