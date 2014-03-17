@@ -1,0 +1,23 @@
+// Compass
+
+@import "compass/css3";
+$legacy-support-for-ie: false;
+
+
+// Normalize
+
+@import '../lib/normalize-css/normalize.css';
+
+
+// Suit
+
+@import '../lib/suit-base/base.css';
+
+
+// Theme
+
+*,
+*:before,
+*:after {
+	@include box-sizing(border-box);
+}

@@ -1,0 +1,11 @@
+{
+	"name": "tumblr-theme-scaffold",
+	"version": "1.0.0",
+	"dependencies": {
+		"almond": "0.2.9",
+		"html5shiv": "3.7.0",
+		"r.js": "2.1.10",
+		"requirejs": "2.1.10",
+		"suit-base": "0.3.0"
+	}
+}
