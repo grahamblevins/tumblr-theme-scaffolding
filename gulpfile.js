@@ -8,9 +8,11 @@ gulp.task('bower', function () {
 
 	bower.commands.prune();
 	bower.commands.install();
+
+	return gulp;
 });
 
-gulp.task('compass', function () {
+gulp.task('compass', ['bower'], function () {
 
     gulp.src('sass/**/*.scss')
         .pipe(compass({
@@ -20,19 +22,21 @@ gulp.task('compass', function () {
         .on('error', function () {});
 });
 
-gulp.task('imagemin', function () {
+gulp.task('imagemin', ['optimize'], function () {
 
 	gulp.src('www/core/img/**/*')
 		.pipe(imagemin())
 		.pipe(gulp.dest('www/build/img'));
 });
 
-gulp.task('optimize', function () {
+gulp.task('optimize', ['bower', 'compass'], function () {
 
 	exec('node www/core/lib/r.js/dist/r.js -o build.js', function (error, stdout, stderr) {
 
 		console.log(stdout);
 	});
+
+	return gulp;
 });
 
 gulp.task('default', ['bower', 'compass'], function () {
