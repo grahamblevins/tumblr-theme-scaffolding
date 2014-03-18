@@ -11,11 +11,11 @@
 		<meta name="keywords" content="{block:Tags}{Tag}, {/block:Tags}{Title}" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-		<meta name="if:Development Mode Enabled" content="0" />
-		<meta name="text:Base URL" content="" />
-		<meta name="text:JavaScript URL" content="/core/js/theme.js" />
-		<meta name="text:Standard Page Title RegEx" content="" />
-		<meta name="text:Stylesheet URL" content="/core/css/theme.css" />
+		<meta name="if:Developer Mode Enabled" content="0" />
+		<meta name="text:Developer Base URL" content="" />
+		<meta name="text:Developer JavaScript URL" content="/core/js/theme.js" />
+		<meta name="text:Developer Stylesheet URL" content="/core/css/theme.css" />
+		<meta name="text:Standard Page Title Regex" content="" />
 
 		<!-- meta name="color:" content="" / -->
 
@@ -30,13 +30,13 @@
 		<!-- meta name="text:" content="" / -->
 
 		{block:IfBaseURL}
-		<base href="{text:Base URL}" />
+		<base href="{text:Developer Base URL}" />
 		{/block:IfBaseURL}
 
 		<link href="{Favicon}" rel="shortcut icon" />
 		<link rel="alternate" type="application/rss+xml" href="{RSS}" />
 
-		<link href="{text:Stylesheet URL}" rel="stylesheet" type="text/css" />
+		<link href="{text:Developer Stylesheet URL}" rel="stylesheet" type="text/css" />
 
 		<style type="text/css">
 			{CustomCSS}
@@ -53,13 +53,13 @@
 					isPermalink: {block:PermalinkPage}!{/block:PermalinkPage}false,
 					isPost: {block:PermalinkPage}{block:Posts}!("{Permalink}".length > 0) === {/block:Posts}{/block:PermalinkPage}false,
 					isStandard: {block:PermalinkPage}{block:Posts}{block:Text}!("{Permalink}".length === 0) === {/block:Text}{/block:Posts}{/block:PermalinkPage}false,
-					isCustom: {block:IfStandardPageTitleRegEx}{block:PermalinkPage}{block:Posts}{block:Text}!("{Permalink}".length === 0 && ("{block:PostTitle}{URLEncodedPostTitle}{/block:PostTitle}".search(/{text:Standard Page Title RegEx}/) >= 0)) === {/block:Text}{/block:Posts}{/block:PermalinkPage}{/block:IfStandardPageTitleRegEx}false
+					isCustom: {block:IfStandardPageTitleRegex}{block:PermalinkPage}{block:Posts}{block:Text}!("{Permalink}".length === 0 && ("{block:PostTitle}{URLEncodedPostTitle}{/block:PostTitle}".search(/{text:Standard Page Title Regex}/) >= 0)) === {/block:Text}{/block:Posts}{/block:PermalinkPage}{/block:IfStandardPageTitleRegex}false
 				}
 			};
 
 		</script>
 
-		<script{block:IfDevelopmentModeEnabled} data-main="{text:JavaScript URL}"{/block:IfDevelopmentModeEnabled} src="{block:IfDevelopmentModeEnabled}/core/lib/requirejs/require.js{/block:IfDevelopmentModeEnabled}{block:IfNotDevelopmentModeEnabled}{text:JavaScript URL}{/block:IfNotDevelopmentModeEnabled}" type="text/javascript"s></script>
+		<script{block:IfDeveloperModeEnabled} data-main="{text:Developer JavaScript URL}"{/block:IfDeveloperModeEnabled} src="{block:IfDeveloperModeEnabled}/core/lib/requirejs/require.js{/block:IfDeveloperModeEnabled}{block:IfNotDeveloperModeEnabled}{text:Developer JavaScript URL}{/block:IfNotDeveloperModeEnabled}" type="text/javascript"s></script>
 
 	</head>
 	<body class="Page{block:IndexPage} Page--index{block:TagPage} Page--tag{/block:TagPage}{block:SearchPage} Page--search{/block:SearchPage}{/block:IndexPage}{block:PermalinkPage} Page--permalink{block:Posts}{block:Text} Page--{block:Date}not{/block:Date}standard{/block:Text}{block:Date} {TagsAsClasses}{/block:Date}{/block:Posts}"{block:PostTitle} data-title="{URLEncodedPostTitle}{/block:PostTitle}{/block:PermalinkPage}">
