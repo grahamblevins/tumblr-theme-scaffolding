@@ -11,12 +11,6 @@
 		<meta name="keywords" content="{block:Tags}{Tag}, {/block:Tags}{Title}" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-		<meta name="if:Developer Mode Enabled" content="0" />
-		<meta name="text:Developer Base URL" content="" />
-		<meta name="text:Developer JavaScript URL" content="/core/js/theme.js" />
-		<meta name="text:Developer Stylesheet URL" content="/core/css/theme.css" />
-		<meta name="text:Standard Page Title Regex" content="" />
-
 		<!-- meta name="color:" content="" / -->
 
 		<!-- meta name="font:" content="" / -->
@@ -28,6 +22,13 @@
 		<!-- meta name="select:" content="" title="" / -->
 
 		<!-- meta name="text:" content="" / -->
+
+		<!-- Theme Developer Options -->
+		<meta name="if:Developer Mode Enabled" content="0" />
+		<meta name="text:Standard Page Title Regex" content="" />
+		<meta name="text:Developer Base URL" content="" />
+		<meta name="text:Developer JavaScript URL" content="/core/js/theme.js" />
+		<meta name="text:Developer Stylesheet URL" content="/core/css/theme.css" />
 
 		{block:IfDeveloperBaseURL}
 		<base href="{text:Developer Base URL}" />
