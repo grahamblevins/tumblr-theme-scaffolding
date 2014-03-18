@@ -9,26 +9,25 @@
 		<meta charset="utf-8" />
 		<meta name="description" content="{MetaDescription}" />
 		<meta name="keywords" content="{block:Tags}{Tag}, {/block:Tags}{Title}" />
-		<meta name="google-site-verification" content="{text:Google Site Verification}" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<meta name="if:Development Mode Enabled" content="0" />
+		<meta name="text:Base URL" content="" />
+		<meta name="text:JavaScript URL" content="/core/js/theme.js" />
+		<meta name="text:Standard Page Title RegEx" content="" />
+		<meta name="text:Stylesheet URL" content="/core/css/theme.css" />
 
 		<!-- meta name="color:" content="" / -->
 
 		<!-- meta name="font:" content="" / -->
 
 		<!-- meta name="if:" content="0" / -->
-		<meta name="if:Development Mode Enabled" content="0" />
 
 		<!-- meta name="image:" content="" / -->
 
 		<!-- meta name="select:" content="" title="" / -->
 
 		<!-- meta name="text:" content="" / -->
-		<meta name="text:Base URL" content="" />
-		<meta name="text:Google Site Verification" content="" />
-		<meta name="text:JavaScript URL" content="/core/js/theme.js" />
-		<meta name="text:Standard Page Title RegEx" content="" />
-		<meta name="text:Stylesheet URL" content="/core/css/theme.css" />
 
 		{block:IfBaseURL}
 		<base href="{text:Base URL}" />
