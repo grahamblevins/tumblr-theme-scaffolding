@@ -29,8 +29,7 @@
 		<meta name="text:Developer Page Regex" content="" />
 
 		<link href="{Favicon}" rel="shortcut icon" />
-		<link rel="alternate" type="application/rss+xml" href="{RSS}" />
-
+		<link href="{RSS}" rel="alternate" type="application/rss+xml" />
 		<link href="{block:IfDeveloperModeEnabled}{text:Developer Base URL}/css/theme.css{/block:IfDeveloperModeEnabled}{block:IfNotDeveloperModeEnabled}{/block:IfNotDeveloperModeEnabled}" rel="stylesheet" type="text/css" />
 
 		<style type="text/css">
@@ -52,7 +51,7 @@
 					isPermalink: {block:PermalinkPage}!{/block:PermalinkPage}false,
 					isPost: {block:PermalinkPage}{block:Posts}!("{Permalink}".length > 0) === {/block:Posts}{/block:PermalinkPage}false,
 					isStandard: {block:PermalinkPage}{block:Posts}{block:Text}!("{Permalink}".length === 0) === {/block:Text}{/block:Posts}{/block:PermalinkPage}false,
-					isCustom: {block:IfStandardPageTitleRegex}{block:PermalinkPage}{block:Posts}{block:Text}!("{Permalink}".length === 0 && ("{block:PostTitle}{URLEncodedPostTitle}{/block:PostTitle}".search(/{text:Developer Page Regex}/) >= 0)) === {/block:Text}{/block:Posts}{/block:PermalinkPage}{/block:IfStandardPageTitleRegex}false
+					isCustom: {block:IfDeveloperPageRegex}{block:PermalinkPage}{block:Posts}{block:Text}!("{Permalink}".length === 0 && ("{block:PostTitle}{URLEncodedPostTitle}{/block:PostTitle}".search(/{text:Developer Page Regex}/) >= 0)) === {/block:Text}{/block:Posts}{/block:PermalinkPage}{/block:IfDeveloperPageRegex}false
 				}
 			};
 
