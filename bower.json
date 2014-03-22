@@ -5,7 +5,6 @@
 	"dependencies": {
 		"almond": "latest",
 		"html5shiv": "latest",
-		"jquery": "latest",
 		"r.js": "latest",
 		"requirejs": "latest",
 		"suit-base": "latest"
