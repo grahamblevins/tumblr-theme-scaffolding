@@ -6,29 +6,39 @@ var imagemin = require('gulp-imagemin');
 
 var tasks = {
 	bower: function(cb) {
-		bower.commands.prune();
-		bower.commands.install();
-		cb(null);
+		var closure = function() {
+			cb(null);
+		};
+		bower.commands.prune()
+		.on('error', closure)
+		.on('end', function() {
+			bower.commands.install()
+			.on('error', closure)
+			.on('end', closure);
+		});
 	},
 	compass: function(cb) {
 		gulp.src('sass/**/*.scss')
 			.pipe(compass({
 				config_file: 'config.rb',
-					css: 'www/core/css'
+				css: 'www/core/css'
 			}))
 			.on('error', function() {});
 		cb(null);
 	},
-	imagemin: function() {
-		return gulp.src('www/core/img/**/*')
+	imagemin: function(cb) {
+		gulp.src('www/core/img/**/*')
 			.pipe(imagemin())
-			.pipe(gulp.dest('www/build/img'));
+			.pipe(gulp.dest('www/build/img'))
+			.on('end', function() {
+				cb(null);
+			});
 	},
 	optimize: function(cb) {
 		exec('node www/core/lib/r.js/dist/r.js -o build.js', function (error, stdout, stderr) {
 			console.log(stdout);
+			cb(null);
 		});
-		cb(null);
 	}
 };
 
