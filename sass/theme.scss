@@ -1,7 +1,12 @@
 // Compass
 
-@import "compass/css3";
+@import "compass";
 $legacy-support-for-ie: false;
+
+
+// Global
+
+@import 'global';
 
 
 // Normalize

@@ -1,0 +1,29 @@
+$rem-base: 16px !default;
+$base-font-size: 100% !default;
+$font-smoothing: antialiased !default;
+
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@function rem-calc($value, $base-value: $rem-base)  {
+  $value: strip-unit($value) / strip-unit($base-value) * 1rem;
+  @if ($value == 0rem) { $value: 0; }
+  @return $value;
+}
+
+@mixin font-size($value) {
+  font-size: $value;
+  font-size: rem-calc($value);
+}
+
+@mixin font-smoothing($value: $font-smoothing) {
+  -webkit-font-smoothing: $value;
+}
+
+%hiddenText {
+	display: block;
+	overflow: hidden;
+	text-indent: 100%;
+	white-space: nowrap;
+}

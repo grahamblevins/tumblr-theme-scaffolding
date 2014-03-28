@@ -6,7 +6,5 @@ require.config({
 
 	paths: {
 		'app': 'js'
-	},
-
-	shim: {}
+	}
 });
