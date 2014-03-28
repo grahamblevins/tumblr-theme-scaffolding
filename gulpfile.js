@@ -14,12 +14,12 @@ var tasks = {
 		return deferred.promise;
 	},
 	compass: function() {
-	    return gulp.src('sass/**/*.scss')
-	        .pipe(compass({
-	        	config_file: 'config.rb',
-	            css: 'www/core/css'
-	        }))
-	        .on('error', function() {});
+		return gulp.src('sass/**/*.scss')
+			.pipe(compass({
+				config_file: 'config.rb',
+					css: 'www/core/css'
+			}))
+			.on('error', function() {});
 	},
 	imagemin: function() {
 		return gulp.src('www/core/img/**/*')
