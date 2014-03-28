@@ -1,9 +1,9 @@
 ({
-    appDir: 'www/core',
+  appDir: 'www/core',
 
 	baseUrl: '.',
 
-    dir: 'www/build',
+  dir: 'www/build',
 
 	fileExclusionRegExp: /^\./,
 
@@ -11,22 +11,22 @@
 
 	mainConfigFile: 'www/core/js/theme.js',
 
-    modules: [{
+  modules: [{
 
-        excludeShallow: [
-            'app/theme'
-        ],
+    excludeShallow: [
+      'app/theme'
+    ],
 
-        include: [
-            'lib/almond/almond'
-        ],
+    include: [
+      'lib/almond/almond'
+    ],
 
-        name: 'app/theme'
-    }],
+    name: 'app/theme'
+  }],
 
 	preserveLicenseComments: false,
 
-    skipDirOptimize: true,
+  skipDirOptimize: true,
 
 	wrap: true
 })

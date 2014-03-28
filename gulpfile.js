@@ -3,36 +3,32 @@ var bower = require('bower');
 var compass = require('gulp-compass');
 var exec = require('child_process').exec;
 var imagemin = require('gulp-imagemin');
-var q = require('Q');
 
 var tasks = {
-	bower: function() {
-		var deferred = q.defer();
+	bower: function(cb) {
 		bower.commands.prune();
 		bower.commands.install();
-		deferred.resolve();
-		return deferred.promise;
+		cb(null);
 	},
-	compass: function() {
-		return gulp.src('sass/**/*.scss')
+	compass: function(cb) {
+		gulp.src('sass/**/*.scss')
 			.pipe(compass({
 				config_file: 'config.rb',
 					css: 'www/core/css'
 			}))
 			.on('error', function() {});
+		cb(null);
 	},
 	imagemin: function() {
 		return gulp.src('www/core/img/**/*')
 			.pipe(imagemin())
 			.pipe(gulp.dest('www/build/img'));
 	},
-	optimize: function() {
-		var deferred = q.defer();
+	optimize: function(cb) {
 		exec('node www/core/lib/r.js/dist/r.js -o build.js', function (error, stdout, stderr) {
 			console.log(stdout);
-			deferred.resolve();
 		});
-		return deferred.promise;
+		cb(null);
 	}
 };
 

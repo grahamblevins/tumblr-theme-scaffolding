@@ -3,11 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "devDependencies": {
-      "bower": "latest",
-      "gulp": "latest",
-      "gulp-compass": "latest",
-      "gulp-imagemin": "latest",
-      "q": "latest"
+    "bower": "latest",
+    "gulp": "latest",
+    "gulp-compass": "latest",
+    "gulp-imagemin": "latest"
   },
   "engine": "node >= 0.10.25"
 }
