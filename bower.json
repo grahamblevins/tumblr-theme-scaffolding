@@ -1,10 +1,11 @@
 {
-	"name": "tumblr-theme-scaffold",
+	"name": "tumblr-theme-scaffolding",
 	"version": "1.0.0",
 	"private": true,
 	"dependencies": {
 		"almond": "latest",
 		"html5shiv": "latest",
+		"jquery": "latest",
 		"r.js": "latest",
 		"requirejs": "latest",
 		"suit-base": "latest"

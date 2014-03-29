@@ -6,33 +6,28 @@ var imagemin = require('gulp-imagemin');
 
 var tasks = {
 	bower: function(cb) {
-		var closure = function() {
+		var complete = function() {
 			cb(null);
 		};
 		bower.commands.prune()
-		.on('error', closure)
+		.on('error', complete)
 		.on('end', function() {
 			bower.commands.install()
-			.on('error', closure)
-			.on('end', closure);
+			.on('error', complete)
+			.on('end', complete);
 		});
 	},
-	compass: function(cb) {
-		gulp.src('sass/**/*.scss')
+	compass: function() {
+		return gulp.src('sass/**/*.scss')
 			.pipe(compass({
 				config_file: 'config.rb',
 				css: 'www/core/css'
-			}))
-			.on('error', function() {});
-		cb(null);
+			}));
 	},
 	imagemin: function(cb) {
-		gulp.src('www/core/img/**/*')
+		return gulp.src('www/core/img/**/*')
 			.pipe(imagemin())
-			.pipe(gulp.dest('www/build/img'))
-			.on('end', function() {
-				cb(null);
-			});
+			.pipe(gulp.dest('www/build/img'));
 	},
 	optimize: function(cb) {
 		exec('node www/core/lib/r.js/dist/r.js -o build.js', function (error, stdout, stderr) {
