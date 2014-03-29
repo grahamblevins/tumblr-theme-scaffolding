@@ -1,8 +1,7 @@
 require.config({
 
 	deps: [
-		'lib/html5shiv/dist/html5shiv',
-		'jquery'
+		'lib/html5shiv/dist/html5shiv'
 	],
 
 	map: {
