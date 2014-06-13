@@ -1,25 +1,38 @@
+// Compass
+
+@import "compass";
+$legacy-support-for-ie: false;
+
+// Defaults
+
 $rem-base: 16px !default;
-$base-font-size: 100% !default;
+$font-size: 100% !default;
 $font-smoothing: antialiased !default;
 
+// Functions
+
 @function strip-unit($num) {
-  @return $num / ($num * 0 + 1);
+	@return $num / ($num * 0 + 1);
 }
 
 @function rem-calc($value, $base-value: $rem-base)  {
-  $value: strip-unit($value) / strip-unit($base-value) * 1rem;
-  @if ($value == 0rem) { $value: 0; }
-  @return $value;
+	$value: strip-unit($value) / strip-unit($base-value) * 1rem;
+	@if ($value == 0rem) { $value: 0; }
+	@return $value;
 }
 
+// Mixins
+
 @mixin font-size($value) {
-  font-size: $value;
-  font-size: rem-calc($value);
+	font-size: $value;
+	font-size: rem-calc($value);
 }
 
 @mixin font-smoothing($value: $font-smoothing) {
-  -webkit-font-smoothing: $value;
+	-webkit-font-smoothing: $value;
 }
+
+// Extends
 
 %hiddenText {
 	display: block;
