@@ -9,7 +9,7 @@
 
 	findNestedDependencies: true,
 
-	mainConfigFile: 'www/core/js/theme.js',
+	mainConfigFile: 'www/core/app/theme.js',
 
   modules: [{
 

@@ -6,15 +6,14 @@ require.config({
 
 	map: {
 		'*': {
-			'jquery': 'app/lib/jquery/jquery-private'
+			'jquery': 'lib_local/jquery/jquery-private'
 		},
-		'app/lib/jquery/jquery-private': {
+		'lib_local/jquery/jquery-private': {
 			'jquery': 'jquery'
 		}
   },
 
 	paths: {
-		'app': 'js',
 		'jquery': 'lib/jquery/dist/jquery'
 	}
 });

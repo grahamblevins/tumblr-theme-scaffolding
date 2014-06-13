@@ -8,5 +8,5 @@
     "gulp-compass": "latest",
     "gulp-imagemin": "latest"
   },
-  "engine": "node >= 0.10.25"
+  "engine": "node >= 0.10.28"
 }
