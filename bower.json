@@ -1,13 +1,16 @@
 {
 	"name": "tumblr-theme-scaffolding",
-	"version": "1.0.0",
-	"private": true,
+	"version": "1.1.0",
 	"dependencies": {
 		"almond": "latest",
 		"html5shiv": "latest",
 		"jquery": "latest",
 		"r.js": "latest",
 		"requirejs": "latest",
-		"suit-base": "latest"
+		"suit-base": "latest",
+		"suit-flex-embed": "latest",
+		"suit-grid": "latest",
+		"suit-utils-size": "latest",
+		"tumbly": "https://github.com/storyware/tumbly.git#1.9.6.10"
 	}
 }

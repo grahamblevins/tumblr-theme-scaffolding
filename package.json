@@ -1,12 +1,12 @@
 {
   "name": "tumblr-theme-scaffolding",
-  "version": "1.0.0",
-  "private": true,
+  "version": "1.1.0",
   "devDependencies": {
     "bower": "latest",
     "gulp": "latest",
     "gulp-compass": "latest",
-    "gulp-imagemin": "latest"
-  },
-  "engine": "node >= 0.10.28"
+    "gulp-imagemin": "latest",
+    "gulp-rework": "latest",
+    "rework-import": "latest"
+  }
 }

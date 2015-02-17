@@ -28,5 +28,8 @@
 
   skipDirOptimize: true,
 
-	wrap: true
+  wrap: {
+    start: '',
+    end: '(new (require("lib/tumbly/tumbly"))({ features: window.scaffold.features }));'
+  }
 })

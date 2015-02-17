@@ -3,6 +3,8 @@ var bower = require('bower');
 var compass = require('gulp-compass');
 var exec = require('child_process').exec;
 var imagemin = require('gulp-imagemin');
+var imprt = require('rework-import');
+var rework = require('gulp-rework');
 
 var tasks = {
 	bower: function(cb) {
@@ -34,20 +36,27 @@ var tasks = {
 			console.log(stdout);
 			cb(null);
 		});
+	},
+	rework: function() {
+		return gulp.src('www/core/css/theme.css')
+			.pipe(rework(imprt()))
+			.pipe(gulp.dest('www/core/css'));
 	}
 };
 
 gulp.task('bower', tasks.bower);
 gulp.task('compass', tasks.compass);
-gulp.task('optimize', tasks.optimize);
 gulp.task('imagemin', tasks.imagemin);
+gulp.task('optimize', tasks.optimize);
+gulp.task('rework', tasks.rework);
 
-gulp.task('build-bower', tasks.bower);
-gulp.task('build-compass', ['build-bower'], tasks.compass);
-gulp.task('build-optimize', ['build-bower', 'build-compass'], tasks.optimize);
-gulp.task('build-imagemin', ['build-optimize'], tasks.imagemin);
-gulp.task('build', ['build-bower', 'build-compass', 'build-optimize', 'build-imagemin']);
+gulp.task('build_bower', tasks.bower);
+gulp.task('build_compass', ['build_bower'], tasks.compass);
+gulp.task('build_rework', ['build_bower', 'build_compass'], tasks.rework);
+gulp.task('build_optimize', ['build_bower', 'build_compass', 'build_rework'], tasks.optimize);
+gulp.task('build_imagemin', ['build_bower', 'build_compass', 'build_rework', 'build_optimize'], tasks.imagemin);
+gulp.task('build', ['build_bower', 'build_compass', 'build_rework', 'build_optimize', 'build_imagemin']);
 
-gulp.task('default', ['build-bower', 'build-compass'], function() {
+gulp.task('default', ['build'], function () {
 	gulp.watch('sass/**/*', ['compass']);
 });

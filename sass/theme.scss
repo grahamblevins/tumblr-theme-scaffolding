@@ -1,23 +1,14 @@
-// Compass
-
-@import "compass";
-$legacy-support-for-ie: false;
-
-
-// Global
-
-@import 'global';
-
-
 // Normalize
 
 @import '../lib/normalize-css/normalize.css';
 
-
 // Suit
 
-@import '../lib/suit-base/base.css';
+@import '../lib/suit-base/lib/base.css';
 
+// Global
+
+@import 'global';
 
 // Theme
 

@@ -1,15 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 
 		<!-- Tumblr Theme Scaffolding -->
 
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>{block:TagPage}Tagged "{Tag}" | {/block:TagPage}{block:SearchPage}Searched "{SearchQuery}" | {/block:SearchPage}{block:PostSummary}{PostSummary} | {/block:PostSummary}{Title} | Tumblr Themes &amp; Strategy</title>
-
-		<meta charset="utf-8" />
-		<meta name="description" content="{MetaDescription}" />
-		<meta name="keywords" content="{block:Tags}{Tag}, {/block:Tags}{Title}" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="{MetaDescription}">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<!-- meta name="color:" content="" / -->
 
@@ -24,17 +23,17 @@
 		<!-- meta name="text:" content="" / -->
 
 		<!-- Theme Developer Options -->
-		<meta name="if:Developer Mode Enabled" content="0" />
-		<meta name="text:Developer Base URL" content="/core" />
-		<meta name="text:Developer Page Regex" content="" />
+		<meta name="if:Developer Mode Enabled" content="0">
+		<meta name="text:Developer Base URL" content="http://tumblr.local/core">
+		<meta name="text:Developer Page Regex" content="">
 
-		<link href="{Favicon}" rel="shortcut icon" />
-		<link href="{RSS}" rel="alternate" type="application/rss+xml" />
+		<link href="{Favicon}" rel="shortcut icon">
+		<link href="{RSS}" rel="alternate" type="application/rss+xml">
 		{block:IfDeveloperModeEnabled}
-		<link href="{text:Developer Base URL}/css/theme.css" rel="stylesheet" type="text/css" />
+		<link href="{text:Developer Base URL}/css/theme.css" rel="stylesheet" type="text/css">
 		{/block:IfDeveloperModeEnabled}
 		{block:IfNotDeveloperModeEnabled}
-		<link href="" rel="stylesheet" type="text/css" />
+		<link href="" rel="stylesheet" type="text/css">
 		{/block:IfNotDeveloperModeEnabled}
 
 		<style type="text/css">
@@ -48,6 +47,7 @@
 			},
 
 			scaffold = {
+				features: {},
 				page: {
 					isIndex: {block:IndexPage}!{/block:IndexPage}false,
 					isSearch: {block:SearchPage}!{/block:SearchPage}false,
@@ -70,6 +70,9 @@
 
 	</head>
 	<body class="Page{block:IndexPage} Page--index{block:TagPage} Page--tag{/block:TagPage}{block:SearchPage} Page--search{/block:SearchPage}{/block:IndexPage}{block:PermalinkPage} Page--permalink{block:Posts}{block:Text} Page--{block:Date}not{/block:Date}standard{/block:Text}{block:Date} {TagsAsClasses}{/block:Date}{/block:Posts}"{block:PostTitle} data-title="{URLEncodedPostTitle}{/block:PostTitle}{/block:PermalinkPage}">
+		<!--[if lt IE 8]>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
 		<header></header>
 		<section>
 			{block:Posts}
@@ -79,7 +82,7 @@
 					<h2 class="Post-title">
 						<div class="Answer-asker">
 							<span class="Answer-portrait">
-								<img src="{AskerPortraitURL-30}" />
+								<img src="{AskerPortraitURL-30}">
 							</span>
 							<span class="Answer-name">{Asker} asked:<span>
 						</div>
@@ -93,7 +96,7 @@
 					<div class="Post-media">
 						{block:AudioEmbed}
 						{AudioEmbed color="white"}
-                        {/block:AudioEmbed}
+            {/block:AudioEmbed}
 					</div>
 					{block:PermalinkPage}
 					{block:Caption}
@@ -129,7 +132,7 @@
 					{block:Panorama}
 					<div class="Post-media">
 						{LinkOpenTag}
-							<img alt="{PhotoAlt}" src="{PhotoURL-Panorama}" />
+							<img alt="{PhotoAlt}" src="{PhotoURL-Panorama}">
 						{LinkCloseTag}
 					</div>
 					{block:Caption}
@@ -139,9 +142,9 @@
 					{block:Photo}
 					<div class="Post-media">
 						{LinkOpenTag}
-							<img alt="{PhotoAlt}" src="{PhotoURL-500}"{block:HighRes} style="display:none;"{/block:HighRes} />
+							<img alt="{PhotoAlt}" src="{PhotoURL-500}"{block:HighRes} style="display:none;"{/block:HighRes}>
 							{block:HighRes}
-							<img alt="{PhotoAlt}" src="{PhotoURL-HighRes}" />
+							<img alt="{PhotoAlt}" src="{PhotoURL-HighRes}">
 							{/block:HighRes}
 						{LinkCloseTag}
 					</div>
@@ -150,7 +153,7 @@
 					{/block:Caption}
 					{/block:Photo}
 					{block:Photoset}
-					<div class="Post-media">{Photoset-700}</div>
+					<div class="Post-media">{Photoset}</div>
 					{block:Caption}
 					<div class="Post-body">{Caption}</div>
 					{/block:Caption}
