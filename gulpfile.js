@@ -3,7 +3,7 @@ var bower = require('bower');
 var compass = require('gulp-compass');
 var exec = require('child_process').exec;
 var imagemin = require('gulp-imagemin');
-var imprt = require('rework-import');
+var inliner = require('rework-import');
 var rework = require('gulp-rework');
 
 var tasks = {
@@ -39,7 +39,7 @@ var tasks = {
 	},
 	rework: function() {
 		return gulp.src('www/core/css/theme.css')
-			.pipe(rework(imprt()))
+			.pipe(rework(inliner()))
 			.pipe(gulp.dest('www/core/css'));
 	}
 };
